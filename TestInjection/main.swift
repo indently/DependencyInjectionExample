@@ -12,6 +12,9 @@ class Dependencies {
     init() {
         /// Can be swapped out easily with anything that conforms to the DataProtocol protocol
         @Provider var dataStorage = DataStorage(testMode: true) as DataProtocol
+        
+        /// Providers do not need to all be placed in one file, you just need to make sure it happens before you use @Inject.
+        /// It's kind of like @Environment
         @Provider var df = DataFormatter()
     }
 }
